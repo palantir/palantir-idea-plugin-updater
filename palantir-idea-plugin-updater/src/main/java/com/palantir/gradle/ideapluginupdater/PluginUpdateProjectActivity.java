@@ -1,20 +1,6 @@
-/*
- * (c) Copyright 2025 Palantir Technologies Inc. All rights reserved.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 package com.palantir.gradle.ideapluginupdater;
 
+import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManagerCore;
 import com.intellij.ide.plugins.PluginNode;
 import com.intellij.ide.plugins.RepositoryHelper;
@@ -57,8 +43,6 @@ public class PluginUpdateProjectActivity implements ProjectActivity, Disposable 
 
     @Override
     public final @NotNull Object execute(@NotNull Project project, @NotNull Continuation<? super Unit> continuation) {
-        System.out.println("FINLAY");
-        log.error("HERE");
         Alarm alarm = new Alarm(Alarm.ThreadToUse.POOLED_THREAD, this);
         scheduleUpdateCheck(project, alarm, INITIAL_DELAY_MS);
         return Unit.INSTANCE;
@@ -106,7 +90,7 @@ public class PluginUpdateProjectActivity implements ProjectActivity, Disposable 
         });
     }
 
-    private String updateIfNeeded(com.intellij.ide.plugins.IdeaPluginDescriptor plugin, Project project) {
+    private String updateIfNeeded(IdeaPluginDescriptor plugin, Project project) {
         Set<PluginId> pluginIds = Set.of(plugin.getPluginId());
         PluginNode latestPlugin = RepositoryHelper.loadPlugins(pluginIds).stream()
                 .max(Comparator.comparing(PluginNode::getVersion, VersionComparatorUtil::compare))
