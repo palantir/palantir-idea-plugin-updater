@@ -3,7 +3,7 @@
   -->
 
 <idea-plugin url="https://github.com/palantir/palantir-idea-plugin-updater" require-restart="false">
-    <id>palantir-idea-plugin-updater</id>
+    <id>palantir-plugin-updater</id>
     <name>Palantir Updater</name>
     <vendor url="https://github.com/palantir/palantir-idea-plugin-updater">
         Palantir
