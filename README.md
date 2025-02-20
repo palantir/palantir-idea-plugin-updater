@@ -3,3 +3,7 @@
 </p>
 
 # Palantir IDEA Plugin Updater
+
+Intellij IDEA plugin to automatically Palantir IDEA plugins.
+
+Runs in the background and attempts upgrades every hour. If upgrade fails opens a notification to the user.

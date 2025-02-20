@@ -11,14 +11,15 @@
 
     <description>
         <![CDATA[
-    <h2> Palantir Plugin Updater </h2>
-    words words words words
+    <h2> Palantir Idea Plugin Updater </h2>
+
+    <p>
+    Intellij IDEA plugin to automatically Palantir IDEA plugins.
+
+    Runs in the background and attempts upgrades every hour. If upgrade fails opens a notification to the user.
+    </p>
     ]]>
     </description>
-
-    <depends>com.intellij.modules.java</depends>
-    <depends>com.intellij.modules.lang</depends>
-    <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <postStartupActivity implementation="com.palantir.gradle.ideapluginupdater.PluginUpdateProjectActivity"/>
