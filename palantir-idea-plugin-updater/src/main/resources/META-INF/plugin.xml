@@ -1,0 +1,28 @@
+<!--
+  ~ (c) Copyright 2025 Palantir Technologies Inc. All rights reserved.
+  -->
+
+<idea-plugin url="https://github.com/palantir/palantir-idea-plugin-updater" require-restart="false">
+    <id>palantir-idea-plugin-updater</id>
+    <name>Palantir Idea Updater</name>
+    <vendor url="https://github.com/palantir/palantir-idea-plugin-updater">
+        Palantir
+    </vendor>
+
+    <description>
+        <![CDATA[
+    <h2> Palantir Plugin Updater </h2>
+    words words words words
+    ]]>
+    </description>
+
+    <depends>com.intellij.modules.java</depends>
+    <depends>com.intellij.modules.lang</depends>
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <postStartupActivity implementation="com.palantir.gradle.ideapluginupdater.PluginUpdateProjectActivity"/>
+        <notificationGroup id="Update Palantir plugins"
+                           displayType="BALLOON"/>
+    </extensions>
+</idea-plugin>

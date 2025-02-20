@@ -1,0 +1,20 @@
+apply plugin: 'com.palantir.gradle-plugin-testing'
+apply plugin: 'java'
+apply plugin: 'com.palantir.external-publish-intellij'
+
+intellij {
+    pluginName = "palantir-idea-plugin-updater"
+    updateSinceUntilBuild = true
+    version = "2024.1"
+    plugins = ['java']
+}
+
+patchPluginXml {
+    sinceBuild = '241'
+    untilBuild = ''
+}
+
+
+dependencies {
+    testImplementation gradleTestKit()
+}
