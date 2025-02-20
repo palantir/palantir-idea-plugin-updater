@@ -3,15 +3,15 @@
   -->
 
 <idea-plugin url="https://github.com/palantir/palantir-idea-plugin-updater" require-restart="false">
-    <id>palantir-idea-plugin-updater</id>
-    <name>Palantir Idea Updater</name>
+    <id>palantir-addon-updater</id>
+    <name>Palantir Addon Updater</name>
     <vendor url="https://github.com/palantir/palantir-idea-plugin-updater">
         Palantir
     </vendor>
 
     <description>
         <![CDATA[
-    <h2> Palantir Idea Plugin Updater </h2>
+    <h2> Palantir Addon Updater </h2>
 
     <p>
     Intellij IDEA plugin to automatically Palantir IDEA plugins.
@@ -20,6 +20,8 @@
     </p>
     ]]>
     </description>
+
+    <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
         <postStartupActivity implementation="com.palantir.gradle.ideapluginupdater.PluginUpdateProjectActivity"/>

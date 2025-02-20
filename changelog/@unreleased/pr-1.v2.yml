@@ -1,0 +1,5 @@
+type: fix
+fix:
+  description: cant be named idea or plugin
+  links:
+  - https://github.com/palantir/palantir-idea-plugin-updater/pull/1
