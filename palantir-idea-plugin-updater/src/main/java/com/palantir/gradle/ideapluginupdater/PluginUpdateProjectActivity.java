@@ -103,6 +103,7 @@ public class PluginUpdateProjectActivity implements ProjectActivity, Disposable 
         });
     }
 
+    @SuppressWarnings("for-rollout:Slf4jLogsafeArgs")
     private String updateIfNeeded(IdeaPluginDescriptor plugin, Project project) {
         Set<PluginId> pluginIds = Set.of(plugin.getPluginId());
         PluginNode latestPlugin = RepositoryHelper.loadPlugins(pluginIds).stream()
@@ -123,10 +124,12 @@ public class PluginUpdateProjectActivity implements ProjectActivity, Disposable 
         return success ? null : plugin.getName();
     }
 
+    @SuppressWarnings("for-rollout:Slf4jLogsafeArgs")
     private boolean updatePlugin(PluginNode plugin, Project project) {
         CompletableFuture<Boolean> updateResult = new CompletableFuture<>();
 
         ProgressManager.getInstance().run(new Task.Backgroundable(project, "Updating plugin", true) {
+            @SuppressWarnings("for-rollout:Slf4jLogsafeArgs")
             @Override
             public void run(ProgressIndicator indicator) {
                 try {
